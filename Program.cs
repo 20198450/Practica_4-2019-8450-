@@ -1,29 +1,34 @@
 ﻿using System;
 
-namespace NumeroPositivo
+namespace Num1_10
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int numero1;
-            int numero2;
-            int resultado;
-
+            int valor;
+            string linea;
             do
             {
-
-                Console.Write("Escriba un numero positivo:");
-                numero1 = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Escriba otro numero positivo:");
-                numero2 = Convert.ToInt32(Console.ReadLine());
-                resultado = numero1 + numero2;
-                if (numero1 != 0 )
-
-                    Console.WriteLine("El resultado es:   {0}", resultado);
-
-            } while (numero1 != 0 || numero2 != 0);
-            Console.WriteLine("Haga click para salir del programa...");
+                Console.Write("Ingrese un valor entre 0 al 10 (0 finaliza):");
+                linea = Console.ReadLine();
+                valor = int.Parse(linea);
+                if (valor >= 100)
+                {
+                    Console.WriteLine("Tiene 3 dígitos.");
+                }
+                else
+                {
+                    if (valor >= 10)
+                    {
+                        Console.WriteLine("Tiene 2 dígitos.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tiene 1 dígito.");
+                    }
+                }
+            } while (valor != 0);
         }
     }
 }
